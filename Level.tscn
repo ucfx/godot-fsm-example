@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://la16spnrnd1b"]
+
+[ext_resource type="PackedScene" uid="uid://dri8od50aoatv" path="res://Player/player.tscn" id="1_t7iv1"]
+[ext_resource type="PackedScene" uid="uid://cil2tj1i7s3e6" path="res://Enemy/enemy.tscn" id="2_2nifc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7iv1"]
+size = Vector2(15.625, 516)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nifc"]
+size = Vector2(665, 20)
+
+[node name="Level" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("2_2nifc")]
+position = Vector2(212, 253)
+
+[node name="Player" parent="." instance=ExtResource("1_t7iv1")]
+position = Vector2(407, 254)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Environment" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7.8125, 238)
+shape = SubResource("RectangleShape2D_t7iv1")
+
+[node name="Environment2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(647.875, 238)
+shape = SubResource("RectangleShape2D_t7iv1")
+
+[node name="Environment3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(322.5, -10)
+shape = SubResource("RectangleShape2D_2nifc")
+
+[node name="Environment4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(322.5, 490)
+shape = SubResource("RectangleShape2D_2nifc")
+
+[connection signal="child_entered_tree" from="StaticBody2D" to="." method="_on_static_body_2d_child_entered_tree"]
