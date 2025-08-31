@@ -22,19 +22,47 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="Environment" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-7.8125, 238)
+position = Vector2(0.1875, 238)
 shape = SubResource("RectangleShape2D_t7iv1")
 
 [node name="Environment2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(647.875, 238)
+position = Vector2(639.875, 238)
 shape = SubResource("RectangleShape2D_t7iv1")
 
 [node name="Environment3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(322.5, -10)
+position = Vector2(322.5, -2)
 shape = SubResource("RectangleShape2D_2nifc")
 
 [node name="Environment4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(322.5, 490)
+position = Vector2(322.5, 482)
 shape = SubResource("RectangleShape2D_2nifc")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = 494.0
+color = Color(0.20033, 0.20033, 0.20033, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
+offset_left = 632.0
+offset_top = -20.0
+offset_right = 648.0
+offset_bottom = 494.0
+color = Color(0.20033, 0.20033, 0.20033, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D"]
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 655.0
+offset_bottom = 8.0
+color = Color(0.20033, 0.20033, 0.20033, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="StaticBody2D"]
+offset_left = -7.0
+offset_top = 472.0
+offset_right = 655.0
+offset_bottom = 492.0
+color = Color(0.20033, 0.20033, 0.20033, 1)
 
 [connection signal="child_entered_tree" from="StaticBody2D" to="." method="_on_static_body_2d_child_entered_tree"]
